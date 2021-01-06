@@ -2,7 +2,7 @@
 <img alt="Vue logo" src="./assets/logo.png">
 <h1>Vue 3 Todo App</h1>
   <form @submit.prevent="addNewTodo">
-    <label><h3>new Todo</h3>
+    <label><h3>New Todo:</h3>
     <input placeholder="HERE!" v-model="newTodo" name="newTodo"><br>
     </label><br>
     <button class="button">Add new Todo</button>
@@ -11,10 +11,10 @@
   <button class="button" @click="removeAll">Remove All</button>
   <!-- <h2>{{newTodo}}</h2> -->
 <ul>
-  <li v-for="(todo , index) in todos" :key="todo.id" class="todo">
-      <h3 :class="{ done:todo.done }" @click="toggleDone(todo)">{{todo.content}}</h3>
+  <h3 v-for="(todo , index) in todos" :key="todo.id" class="todo">
+      <h2 :class="{ done:todo.done }" @click="toggleDone(todo)">{{todo.content}}</h2>
       <button class="button" @click="removeTodo(index)">Remove Todo</button>
-  </li>
+  </h3>
   </ul>
   <br>
   <br>
@@ -117,5 +117,8 @@ export default {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+h2{
+  padding-right: 35px;
 }
 </style>
